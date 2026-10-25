@@ -309,7 +309,7 @@ setInterval(() => {
   }
 }, 30000).unref();
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
   log(`Perihelion listening on http://localhost:${PORT}`);
 });
 
