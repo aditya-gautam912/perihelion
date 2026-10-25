@@ -22,6 +22,7 @@
   const stick = $('stick');
   const knob = $('knob');
   const nameInput = $('nameInput');
+  const roomInput = $('roomInput');
   const fineprint = $('fineprint');
 
   const params = new URLSearchParams(location.search);
@@ -359,7 +360,7 @@
       fineprint.textContent = 'Joining the live public arena. Empty seats are held by bots — drop in any time.';
       $('playBtn').textContent = 'Enter the arena';
     } else {
-      fineprint.textContent = `Private arena ${state.room}. Send the invite link to a friend — bots hold the rest.`;
+      fineprint.textContent = `Private arena ${state.room}. Share the invite link or room code — bots hold the rest.`;
       $('playBtn').textContent = `Join room ${state.room}`;
     }
   }
@@ -395,6 +396,29 @@
     const code = Array.from({ length: 4 }, () => 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random() * 32)]).join('');
     state.room = code;
     const url = new URL(location.href);
+    url.searchParams.set('room', code);
+    history.replaceState(null, '', url);
+    updateFineprint();
+    begin();
+  });
+
+  roomInput.addEventListener('input', () => {
+    roomInput.value = clean(roomInput.value);
+    roomInput.setCustomValidity('');
+  });
+
+  $('joinRoomForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const code = clean(roomInput.value);
+    if (code.length < 3) {
+      roomInput.setCustomValidity('Enter a room code with 3 to 6 letters or numbers.');
+      roomInput.reportValidity();
+      return;
+    }
+    roomInput.setCustomValidity('');
+    state.room = code;
+    const url = new URL(location.href);
+    url.search = '';
     url.searchParams.set('room', code);
     history.replaceState(null, '', url);
     updateFineprint();

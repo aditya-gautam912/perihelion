@@ -56,7 +56,8 @@ browser smoke test, cover generation, and Docker image build through
 - **Space**: pulse
 - On touch devices, use the virtual stick and action buttons
 
-Use **Create a private room** to generate an invite link. Empty seats are
+Use **Create a private room** to generate an invite link and room code. Friends
+can open the invite link or enter the code on the start screen. Empty seats are
 filled by bots, and disconnected players can reclaim their seat briefly.
 
 ## Configuration

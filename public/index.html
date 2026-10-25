@@ -65,6 +65,12 @@
 
       <button id="privateBtn" class="btn ghost" type="button">Create a private room</button>
 
+      <form id="joinRoomForm" class="room-join" autocomplete="off">
+        <label class="sr-only" for="roomInput">Room code</label>
+        <input id="roomInput" class="name-input" maxlength="6" minlength="3" placeholder="ROOM CODE" spellcheck="false" autocapitalize="characters" required />
+        <button class="btn ghost" type="submit">Join with code</button>
+      </form>
+
       <div class="brief">
         <div class="brief-col">
           <h2>How you win</h2>
