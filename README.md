@@ -4,6 +4,10 @@ Perihelion is a browser-based multiplayer zero-gravity sumo game. Players
 collect flares and use momentum, dashes, and pulses to push rivals into the
 star or beyond the arena rim.
 
+## Live Demo
+
+Play Perihelion at <https://perihelion-eksv.onrender.com>.
+
 ## Run locally
 
 Requirements: Node.js 18 or newer.
