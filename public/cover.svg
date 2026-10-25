@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0" stop-color="#1d1820"/>
+      <stop offset="0.55" stop-color="#0a0f1d"/>
+      <stop offset="1" stop-color="#05070f"/>
+    </radialGradient>
+    <radialGradient id="star">
+      <stop offset="0" stop-color="#fff4c4"/>
+      <stop offset="0.3" stop-color="#ffb457"/>
+      <stop offset="1" stop-color="#ff5a3d" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="600" cy="315" r="128" fill="url(#star)" filter="url(#glow)"/>
+  <circle cx="600" cy="315" r="48" fill="#ffb457"/>
+  <circle cx="600" cy="315" r="108" fill="none" stroke="#57e6ff" stroke-width="3" opacity=".75"/>
+  <circle cx="600" cy="315" r="182" fill="none" stroke="#57e6ff" stroke-width="1" opacity=".28"/>
+  <circle cx="600" cy="315" r="246" fill="none" stroke="#ff6bd6" stroke-width="1" opacity=".2"/>
+  <text x="600" y="112" text-anchor="middle" fill="#e9eefc" font-family="Segoe UI, sans-serif"
+        font-size="68" font-weight="800" letter-spacing="14">PERIHELION</text>
+  <text x="600" y="535" text-anchor="middle" fill="#aeb8d3" font-family="Segoe UI, sans-serif"
+        font-size="21" letter-spacing="5">ONE STAR. ONE FLARE. NOTHING BRAKES.</text>
+</svg>

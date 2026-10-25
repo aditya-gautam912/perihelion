@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Perihelion — a zero-gravity sumo match</title>
+  <meta name="description" content="Two to six ships. One dying star. Nothing brakes. A real-time multiplayer game where the only way to win is to make everyone else fall in." />
+  <meta name="theme-color" content="#05070f" />
+  <meta property="og:title" content="Perihelion — a zero-gravity sumo match" />
+  <meta property="og:description" content="Two to six ships. One dying star. Nothing brakes. Play in your browser, no download." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/cover.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='6' fill='%23ffb457'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%2357e6ff' stroke-width='2' opacity='.85'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <canvas id="stage" aria-label="Perihelion game arena" role="img"></canvas>
+
+  <header class="hud" id="hud" hidden>
+    <div class="hud-group">
+      <div class="pill">
+        <span class="pill-label">Arena</span>
+        <b id="roomCode">MAIN</b>
+        <button id="copyLink" class="pill-btn" type="button" title="Copy invite link">Invite</button>
+      </div>
+    </div>
+    <div class="hud-center">
+      <span id="roundLabel">Round 1</span>
+      <span class="dot-sep">·</span>
+      <span id="aliveLabel">4 racing</span>
+      <span class="dot-sep">·</span>
+      <span id="myScore">0 / 4</span>
+    </div>
+    <div class="hud-group right">
+      <button id="soundBtn" class="icon-btn" type="button" aria-label="Toggle sound" title="Sound">♪</button>
+    </div>
+  </header>
+
+  <aside id="board" class="board" hidden></aside>
+
+  <div id="banner" class="banner" aria-live="polite"></div>
+  <div id="note" class="note" aria-live="polite"></div>
+  <div id="toast" class="toast"></div>
+
+  <div id="touch" class="touch" hidden>
+    <div class="stick" id="stick"><div class="knob" id="knob"></div></div>
+    <div class="actions">
+      <button class="action pulse" data-act="pulse" type="button">Pulse</button>
+      <button class="action boost" data-act="boost" type="button">Dash</button>
+    </div>
+  </div>
+
+  <main id="menu" class="menu">
+    <div class="menu-inner">
+      <p class="eyebrow">Handshake AI Skills Studio × OpenAI — Multiplayer Game Challenge</p>
+      <h1 class="wordmark">Perihelion</h1>
+      <p class="tagline">One star. One flare. Nothing brakes.</p>
+
+      <form id="enterForm" class="enter" autocomplete="off">
+        <label class="sr-only" for="nameInput">Call sign</label>
+        <input id="nameInput" class="name-input" maxlength="14" placeholder="CALL SIGN" spellcheck="false" />
+        <button id="playBtn" class="btn primary" type="submit">Enter the arena</button>
+      </form>
+
+      <button id="privateBtn" class="btn ghost" type="button">Create a private room</button>
+
+      <div class="brief">
+        <div class="brief-col">
+          <h2>How you win</h2>
+          <p>Collect <b>four flares</b> before anyone else. Shoving is legal — throw rivals into the star or past the ring and they lose 2.4 seconds, not the round. First to <b>three rounds</b> takes the match.</p>
+        </div>
+        <div class="brief-col">
+          <h2>Controls</h2>
+          <p class="keys"><kbd>WASD</kbd> / <kbd>↑←↓→</kbd> thrust · <kbd>Shift</kbd> dash · <kbd>Space</kbd> pulse</p>
+          <p class="muted">Every flare also reloads your pulse. On phones, drag to steer.</p>
+        </div>
+      </div>
+
+      <p class="fineprint" id="fineprint">Joining a live public arena. Empty seats are held by bots — drop in any time.</p>
+    </div>
+  </main>
+
+  <div id="reconnect" class="reconnect" hidden>Connection lost — re-entering the arena…</div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
