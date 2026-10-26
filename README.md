@@ -35,7 +35,7 @@ npm run cover
 The test command runs deterministic simulation checks and an HTTP/WebSocket
 integration suite. The browser test uses headless Chromium; install it once
 with `npx playwright install chromium`. `npm run cover` generates
-`public/cover.svg`.
+`public/cover.png` (and the vector `public/cover.svg`) for social previews.
 
 ## Deploy with Docker
 

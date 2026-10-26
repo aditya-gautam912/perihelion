@@ -2,7 +2,7 @@
   "name": "perihelion",
   "version": "1.0.0",
   "private": true,
-  "description": "Perihelion - a zero-gravity sumo match around a dying star. Online multiplayer game built for the Handshake AI Skills Studio x OpenAI Multiplayer Game Challenge.",
+  "description": "Perihelion - a real-time multiplayer zero-gravity arena. Collect four flares around a dying star. Built for the Handshake AI Skills Studio x OpenAI Multiplayer Game Challenge.",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
